@@ -1,0 +1,35 @@
+.zoom-container {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100vw;
+  overflow: hidden;
+}
+
+.zoom-image {
+  position: absolute;
+  left: 0;
+  visibility: hidden;  /* Start with the image hidden */
+  animation: zoomAndSpin 5s linear infinite;
+  width: 150px;
+  z-index: 1000;
+}
+
+@keyframes zoomAndSpin {
+  0% {
+    transform: translateY(0%) scale(1) translateX(-33vw) rotate(0deg);
+    visibility: visible;  /* Make image visible at the start of the animation */
+  }
+  25% {
+    transform: translateY(-50%) scale(1.25) translateX(0vw) rotate(179deg);
+  }
+  50% {
+    transform: translateY(-100%) scale(1.5) translateX(33vw) rotate(358deg);
+  }
+  75% {
+    transform: translateY(-150%) scale(1.75) translateX(66vw) rotate(520deg);
+  }
+  100% {
+    transform: translateY(-200%) scale(2) translateX(100vw) rotate(670deg);
+  }
+}
